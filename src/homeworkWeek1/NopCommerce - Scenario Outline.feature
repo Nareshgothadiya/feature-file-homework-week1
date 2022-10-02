@@ -7,8 +7,9 @@ Feature: Book Category
   Scenario Outline: I should be able to see top manu tabs on homepage with categories
     When I am on home page
     Then I should be able to see top manu tabs with "<categories>"
+
     Examples:
-      | Categories        |
+      | categories        |
       | Computer          |
       | Electronics       |
       | Apparel           |
@@ -22,18 +23,18 @@ Feature: Book Category
     Then I should be navigate to book category
     And  I should be able to see "<filters>"
     Examples:
-      | Filters  |
+      | filters  |
       | short by |
       | Display  |
       | The Grid |
       | List Tab |
 
   Scenario Outline: I should be able to list of terms of each filters
-    Given I am on book page
-    When  I click on "<filters>"
-    Then  I should be able to see "<list>" in dropdown menu
+  Given: I am on book page
+  When:  I click on "<filters>"
+  Then:  I should be able to see "<list>" in dropdown menu
     Examples:
-      | Filters  | list                                                                           |
+      | filters  | list                                                                           |
       | short by | Name: A to Z, Name: Z to A, Price: Low to High, Price: High to Low, Created on |
       | Display  | 3, 6, 9                                                                        |
 
@@ -44,7 +45,7 @@ Feature: Book Category
     Then  I should be able to choose any filter option from the list
     And   I should be able to see "<result>"
     Examples:
-      | Filters  | option             | result                                                             |
+      | filters  | option             | result                                                             |
       | short by | Name:A to Z        | shorted product with the product name in alphabetical order A to Z |
       | short by | Name: Z to A       | shorted product with the product name in alphabetical order Z to A |
       | short by | Price: Low to High | shorted product with the price in descending order                 |
@@ -55,11 +56,11 @@ Feature: Book Category
       | Display  | 9                  | 9 Products in a page                                               |
 
   Scenario Outline: I should be able to product display format according display format type as per given picture in srs document
-    Given I am on book page
-    When  I click on "<display format icon>"
-    Then  I should be able to product display format according display format type as per given picture in srs document
+  Given: I am on book page
+  When:  I click on "<display format icon>"
+  Then:  I should be able to product display format according display format type as per given picture in srs document
     Examples:
-      | Display format icon |
+      | display format icon |
       | Grid                |
       | List                |
 
